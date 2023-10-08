@@ -30,10 +30,10 @@
           <button class="text-[#FF6347]" data-name="transition_metals">
             Transition metals
           </button>
-          <button class="text-[#40d9a9]" data-name="metalloids">
+          <button class="text-emerald-400" data-name="metalloids">
             Metalloids
           </button>
-          <button class="text-[#32CD32]" data-name="nonmetals">
+          <button class="text-teal-400" data-name="nonmetals" data-colorName="teal">
             Nonmetals
           </button>
           <button class="text-orange-400" data-name="halogens">Halogens</button>
@@ -898,7 +898,7 @@
         // nonmetals-nav
         $(".nav button").click(function () {
           const filterName = $(this).attr("data-name");
-          console.log(filterName);
+          const colorName = $(this).attr("data-colorName");
 
           $(".box").each(function (index, item) {
             // remove all class
@@ -939,25 +939,27 @@
               if (filterName == "nonmetals") {
                 // nonmetals
                 $(".nonmetals").each(function (index, item) {
+                  const putColorName = "text-" + colorName + "-400";
+                  const putBorderColor = "border-" + colorName + "-400";
                   $(item)
                     .removeClass("border-gray-700")
-                    .addClass("border-green-400");
+                    .addClass(putBorderColor);
                   $(item)
                     .find("p")
                     .removeClass("text-gray-700")
-                    .addClass("text-green-400");
+                    .addClass(putColorName);
                   $(item)
                     .find("h1")
                     .removeClass("text-gray-700")
-                    .addClass("text-green-400");
+                    .addClass(putColorName);
                   $(item)
                     .find("h2")
                     .removeClass("text-gray-700")
-                    .addClass("text-green-400");
+                    .addClass(putColorName);
                   $(item)
                     .find("h3")
                     .removeClass("text-gray-700")
-                    .addClass("text-green-400");
+                    .addClass(putColorName);
                 });
               }
             }
