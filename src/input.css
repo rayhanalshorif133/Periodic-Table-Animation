@@ -5,6 +5,30 @@
 
 @layer components {
   .box {
-    @apply flex items-center justify-center w-[5rem] h-[5rem] m-[2px] border-2;
+    @apply cursor-pointer transition-all duration-500 ease-in-out hover:bg-gray-800 hover:scale-150 relative flex flex-col items-center justify-center w-[5.5rem] h-[5.5rem] m-[2px] border-2;
+  }
+
+  .nav{
+    @apply text-center ;
+  }
+
+  .nav h3{
+    @apply text-base font-semibold mt-6;
+  }
+
+  
+  .box p{
+    @apply  absolute top-2 left-2 text-[10px] font-medium;
+  }
+  .box h1{
+    @apply  text-2xl font-semibold;
+  }
+
+  .box h2{
+    @apply text-sm font-medium;
+  }
+
+  .box h3{
+    @apply text-xs font-normal;
   }
 }
