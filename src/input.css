@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .box {
+    @apply flex items-center justify-center w-[5rem] h-[5rem] m-[2px] border-2;
+  }
+}
