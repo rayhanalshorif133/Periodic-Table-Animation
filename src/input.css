@@ -3,9 +3,20 @@
 @tailwind utilities;
 
 
+
+
 @layer components {
+
+  .text-chocolate-400{
+    color : #ff587f;
+  }
+
+  .border-chocolate-400{
+    border-color : #ff587f;
+  }
+
   .box {
-    @apply cursor-pointer transition-all duration-500 ease-in-out hover:bg-gray-800 hover:scale-150 relative flex flex-col items-center justify-center w-[5.5rem] h-[5.5rem] m-[2px] border-2;
+    @apply cursor-pointer transition-all duration-700 ease-in-out bg-stone-950 hover:scale-200 hover:z-10 relative flex flex-col items-center justify-center w-[5.5rem] h-[5.5rem] m-[2px] border-2;
   }
 
   .nav{
@@ -31,4 +42,6 @@
   .box h3{
     @apply text-xs font-normal;
   }
+
+
 }
