@@ -17,7 +17,7 @@
           <h3 class="text-teal-400">1.0080</h3>
         </div>
         <div class="flex space-x-10 nav">
-          <button class="text-orange-400" data-name="alkali_metals">
+          <button class="text-orange-400" data-name="alkali_metals" data-colorName="orange">
             Alkali metals
           </button>
           <button class="text-yellow-400" data-name="alkaline_earth_metals">
@@ -897,76 +897,35 @@
       $(function () {
         // nonmetals-nav
         $(".nav button").click(function () {
-          const filterName = $(this).attr("data-name");
+          const filterName = "." + $(this).attr("data-name");
           const colorName = $(this).attr("data-colorName");
 
           $(".box").each(function (index, item) {
-            // remove all class
-            if (!$(item).hasClass(filterName)) {
-              $(item)
-                .removeClass(
-                  "border-[#FF6347] border-[#40d9a9] border-green-400 border-teal-400 border-orange-400 border-blue-400 border-yellow-400"
-                )
-                .addClass("border-gray-700");
-
-              $(item)
-                .find("p")
-                .removeClass(
-                  "text-[#FF6347] text-[#40d9a9] text-green-400 text-teal-400 text-orange-400 text-blue-400 text-yellow-400"
-                )
-                .addClass("text-gray-700");
-              $(item)
-                .find("h1")
-                .removeClass(
-                  "text-[#FF6347] text-[#40d9a9] text-green-400 text-teal-400 text-orange-400 text-blue-400 text-yellow-400"
-                )
-                .addClass("text-gray-700");
-
-              $(item)
-                .find("h2")
-                .removeClass(
-                  "text-[#FF6347] text-[#40d9a9] text-green-400 text-teal-400 text-orange-400 text-blue-400 text-yellow-400"
-                )
-                .addClass("text-gray-700");
-
-              $(item)
-                .find("h3")
-                .removeClass(
-                  "text-[#FF6347] text-[#40d9a9] text-green-400 text-teal-400 text-orange-400 text-blue-400 text-yellow-400"
-                )
-                .addClass("text-gray-700");
-            } else {
-              if (filterName == "nonmetals") {
-                
-                // nonmetals
-                $(".nonmetals").each(function (index, item) {
-                  const putColorName = "text-" + colorName + "-400";
-                  const putBorderColor = "border-" + colorName + "-400";
-                  $(item)
-                    .removeClass("border-gray-700")
-                    .addClass("border-" + colorName + "-400");
-                  $(item)
-                    .find("p")
-                    .removeClass("text-gray-700")
-                    .addClass(putColorName);
-                  $(item)
-                    .find("h1")
-                    .removeClass("text-gray-700")
-                    .addClass(putColorName);
-                  $(item)
-                    .find("h2")
-                    .removeClass("text-gray-700")
-                    .addClass(putColorName);
-                  $(item)
-                    .find("h3")
-                    .removeClass("text-gray-700")
-                    .addClass(putColorName);
-                });
+            $(item).attr("class").split(" ").forEach((className) => {
+              if (className.includes("border-")) {
+                $(item).removeClass(className);
               }
-            }
-
-            // return all class
+            });
+            $(item).addClass('border-gray-700');
+            $(item).find('p').removeClass().addClass('text-gray-600');
+            $(item).find('h1').removeClass().addClass('text-gray-600');
+            $(item).find('h2').removeClass().addClass('text-gray-600');
+            $(item).find('h3').removeClass().addClass('text-gray-600');
           });
+
+          $(filterName).each(function (index, item) {
+            $(item).attr("class").split(" ").forEach((className) => {
+              if (className.includes("border-")) {
+                $(item).removeClass(className);
+              }
+            });
+            $(item).addClass("border-" + colorName + "-400");
+            $(item).find('p').removeClass().addClass('text-' + colorName + '-400');
+            $(item).find('h1').removeClass().addClass('text-' + colorName + '-400');
+            $(item).find('h2').removeClass().addClass('text-' + colorName + '-400');
+            $(item).find('h3').removeClass().addClass('text-' + colorName + '-400');
+          });
+
         });
       });
     </script>
