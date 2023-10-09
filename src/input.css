@@ -16,7 +16,7 @@
   }
 
   .box {
-    @apply cursor-pointer transition-all duration-700 ease-in-out bg-stone-950 hover:scale-200 hover:z-10 relative flex flex-col items-center justify-center w-[5.5rem] h-[5.5rem] m-[2px] border-2;
+    @apply w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-[5.5rem] 2xl:h-[5.5rem] cursor-pointer transition-all duration-700 ease-in-out bg-stone-950 hover:scale-200 hover:z-10 relative flex flex-col items-center justify-center  m-[2px] border-2;
   }
 
   .nav{
@@ -29,18 +29,18 @@
 
   
   .box p{
-    @apply  absolute top-2 left-2 text-[10px] font-medium;
+    @apply   top-2 left-2 hidden absolute lg:block text-[8px] 2xl:text-[10px] font-medium;
   }
   .box h1{
-    @apply  text-2xl font-semibold;
+    @apply text-base lg:text-lg xl:text-xl 2xl:text-2xl font-semibold;
   }
 
   .box h2{
-    @apply text-sm font-medium;
+    @apply hidden lg:block text-sm font-medium;
   }
 
   .box h3{
-    @apply text-xs font-normal;
+    @apply hidden lg:block text-xs font-normal;
   }
 
 
